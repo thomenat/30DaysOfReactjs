@@ -43,3 +43,13 @@ body {
     color: white;
     font-weight: bold;
   } 
+
+  .complete-btn, .remove-btn {
+    background-color: transparent;
+  }
+
+  .completed {
+    text-decoration: line-through;
+    color: #888; /* Optional: Makes it look faded */
+  }
+  
