@@ -37,7 +37,7 @@ function TodoList() {
         {tasks.map(task => (
           <li key={task.id} className={`task-item ${task.completed ? "completed" : ""}`}>
             {task.text}
-            <button onClick={() => toggleTask(task.id)} className="task-btn complete-btn">✅</button>
+            <button onClick={() => toggleTask(task.id)} className="task-btn complete-btn">✔️</button>
             <button onClick={() => removeTask(task.id)} className="task-btn remove-btn">❌</button>
           </li>
         ))}
