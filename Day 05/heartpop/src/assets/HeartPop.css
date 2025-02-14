@@ -1,0 +1,50 @@
+body {
+    background-color: #ffe4e1; /* Light pink background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #F68EBC;
+  }
+  
+  button {
+    background-color: #ff4d6d; /* Red/pink button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #e63950;
+  }
+  
+  .heart-container {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+ 
+  
+.valentine-message {
+    font-size: 1.5rem;
+    margin-top: 50px;
+    font-family: "Helvetica Neue";
+    font-weight: bold;
+  }
