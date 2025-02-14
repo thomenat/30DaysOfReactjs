@@ -28,12 +28,12 @@ body {
     font-size: 18px;
     font-weight: bold;
     border-radius: 8px;
-    cursor: pointer;
     transition: background 0.5s ease-in-out;
   }
   
   button:hover {
     background-color: #e63950;
+    cursor:pointer
   }
   
   .heart-container {
