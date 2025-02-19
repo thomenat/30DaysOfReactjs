@@ -30,8 +30,8 @@ export default function EditProfile() {
       <form onSubmit={handleSubmit}>
         <div className="profile-picture">
           <img 
-            src={formData.profilePicture ? URL.createObjectURL(formData.profilePicture) : "https://unsplash.com/photos/woman-in-white-crew-neck-shirt-smiling-IF9TK5Uy-KI"} 
-            alt="Profile Preview"
+            src={formData.profilePicture ? URL.createObjectURL(formData.profilePicture) : "/media/avatar.jpg"} 
+          https
           />
         </div>
         <input 
