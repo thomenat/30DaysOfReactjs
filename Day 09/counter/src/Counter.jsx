@@ -22,7 +22,7 @@ function Counter () {
 
 
     return (
-        <div>
+        <div className="counter-container">
           <h2>Counter: {count}</h2>
           <label>
             Step:
@@ -32,25 +32,27 @@ function Counter () {
               onChange={(e) => setStep(Number(e.target.value))}
             />
           </label>
-          <IncrementButton onIncrease={increase} />
-          <DecrementButton onDecrease={decrease} />
-          <ResetButton onReset={reset} />
+          <div className="button-container">
+          <IncrementButton onIncrease={increaseCounter} />
+          <DecrementButton onDecrease={decrementCounter} />
+          <ResetButton onReset={resetCounter} />
+          </div>
         </div>
       );
     }
     
     function IncrementButton({ onIncrease }) {
-      return <button onClick={onIncrease}>+
+      return <button className="increment-btn" onClick={onIncrease}>+
       </button>;
     }
     
     function DecrementButton({ onDecrease }) {
 
-      return <button onClick={onDecrease}>-</button>;
+      return <button className="decrement-btn" onClick={onDecrease}>-</button>;
     }
 
     function ResetButton({ onReset}) {
-        return <button onClick={onReset}>Reset</button>;
+        return <button className="reset-btn" onClick={onReset}>Reset</button>;
     }
 
 export default Counter
