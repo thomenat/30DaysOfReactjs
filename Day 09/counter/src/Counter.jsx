@@ -1,34 +1,56 @@
 import { useState } from "react";
+import './Counter.css'
 
 function Counter () {
     const [count, setCount] = useState(0);
+    const [step, setStep] = useState(1);
 
     function increaseCounter() {
-        setCount(count + 1);
+        setCount(count + step);
     }
 
     function decrementCounter() {
-        setCount(count - 1);
+        if (count > 0) {
+            setCount(count - step);
+        } else  {
+            (setCount(0));
+    }}
+
+    function resetCounter() {
+        setCount(0);
     }
 
 
-return (
+    return (
         <div>
           <h2>Counter: {count}</h2>
-          {/* Step 3: Pass the correct props to child components */}
-          <IncrementButton onIncrease={increaseCounter} />
-          <DecrementButton onDecrease={decrementCounter} />
+          <label>
+            Step:
+            <input
+              type="number"
+              value={step}
+              onChange={(e) => setStep(Number(e.target.value))}
+            />
+          </label>
+          <IncrementButton onIncrease={increase} />
+          <DecrementButton onDecrease={decrease} />
+          <ResetButton onReset={reset} />
         </div>
       );
     }
     
-    // Step 4: Implement child components
     function IncrementButton({ onIncrease }) {
-      return <button onClick={onIncrease}>+</button>;
+      return <button onClick={onIncrease}>+
+      </button>;
     }
     
     function DecrementButton({ onDecrease }) {
+
       return <button onClick={onDecrease}>-</button>;
+    }
+
+    function ResetButton({ onReset}) {
+        return <button onClick={onReset}>Reset</button>;
     }
 
 export default Counter
