@@ -10,11 +10,13 @@ function Counter () {
     }
 
     function decrementCounter() {
-        if (count > 0) {
-            setCount(count - step);
-        } else  {
-            (setCount(0));
-    }}
+        if (count > 0 && step > 0) {
+            setCount(Math.max(count - step, 0)); // Prevents negative numbers
+        } else {
+            setCount(0);
+        }
+    }
+    
 
     function resetCounter() {
         setCount(0);
@@ -27,9 +29,11 @@ function Counter () {
           <label>
             Step:
             <input
+             className="step-input"
               type="number"
               value={step}
               onChange={(e) => setStep(Number(e.target.value))}
+              min="1"
             />
           </label>
           <div className="button-container">
