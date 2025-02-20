@@ -1,10 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
 
 class ExerciseTimer extends React.Component {
   
-  const [seconds, setSeconds] = useState(0);
-
   constructor(props) {
     super(props);
     this.state = {
@@ -21,12 +18,13 @@ class ExerciseTimer extends React.Component {
         }));
       } else {
         clearInterval(this.interval);
-      }, 1000);
-    }
+      }
+    }, 1000);
   }
+    
 
   componentWillUnmount() {
-    clearInterval(this.timerID);
+    clearInterval(this.interval);
   }
   
   
