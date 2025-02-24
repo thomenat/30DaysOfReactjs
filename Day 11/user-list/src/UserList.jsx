@@ -9,14 +9,16 @@ function UserList() {
   
   return (
     <div className='container'>
-    <div>UserList</div>
+    <h1>User List</h1>
     <ul className='users'>
-      <>
-      {users[0]}
-      </>
-    </ul>
+     {users.map((user) => (
+      <React.Fragment key={user.id}>
+        <li><strong>Name:</strong>  {user.name} - {user.email}</li>
+      </React.Fragment>
+     ))}
+     </ul>
     </div>
-  )
+  );
 }
 
 export default UserList
