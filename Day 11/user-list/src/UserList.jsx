@@ -1,4 +1,5 @@
 import React from 'react'
+import './UserList.css';
 
 function UserList() {
   const users = [
@@ -10,13 +11,24 @@ function UserList() {
   return (
     <div className='container'>
     <h1>User List</h1>
-    <ul className='users'>
+    <table className='users'>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
      {users.map((user) => (
       <React.Fragment key={user.id}>
-        <li><strong>Name:</strong>  {user.name} - {user.email}</li>
+        <tr>
+          <td>{user.name}</td>
+          <td>{user.email}</td>
+        </tr>
       </React.Fragment>
      ))}
-     </ul>
+      </tbody>
+     </table>
     </div>
   );
 }
