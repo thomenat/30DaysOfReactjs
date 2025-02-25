@@ -10,7 +10,7 @@ const About = () => {
       <h2>ℹ️ About Page</h2>
       <p>Welcome, {user}!</p>
       <button onClick={() => navigate(-1)}>🔙 Go Back</button>
-      <button onClick={() => navigate(1)}>🔜 Go Forward</button>
+      <button onClick={() => window.history.length > 1 && navigate(1)}>🔜 Go Forward</button>
     </div>
   );
 };
