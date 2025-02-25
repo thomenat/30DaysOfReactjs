@@ -1,7 +1,15 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
-  return <h2>About Me: I'm a Frontend Developer</h2>;
-};
-
+    const navigate = useNavigate();
+  
+    return (
+      <div>
+        <h2>About Page</h2>
+        <button onClick={() => navigate(-1)}>🔙 Go Back</button>
+        <button onClick={() => navigate(1)}>🔜 Go Forward</button>
+      </div>
+    );
+  };
+  
 export default About;
