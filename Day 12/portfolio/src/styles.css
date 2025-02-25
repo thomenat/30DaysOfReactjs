@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    background: #333;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
