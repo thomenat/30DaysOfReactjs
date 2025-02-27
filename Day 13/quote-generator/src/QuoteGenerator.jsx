@@ -1,10 +1,10 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 
 class QuoteGenerator extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            positiveQuotes = [
+            positiveQuotes: [
             "Everything is unfolding perfectly for me.",
             "I am always in the right place at the right time.",
             "Good things are constantly flowing into my life.",
@@ -22,21 +22,38 @@ class QuoteGenerator extends Component {
             "I am grateful for the progress I make each day."
           ],
           currentQuote: ""
-        },
+        };
     }
 
+    componentDidMount() {
+        console.log("Component Mounted!");
+        this.generateRandomQuote();
+      }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.currentQuote !== this.state.currentQuote) {
+          console.log("New Quote Loaded:", this.state.currentQuote);
+        }
+      }
+
       
+      generateRandomQuote = () => {
+        const { positiveQuotes } = this.state;
+        const randomIndex = Math.floor(Math.random() * positiveQuotes.length);
+        this.setState({ currentQuote: positiveQuotes[randomIndex] });
+      };
 
-
-render() {
-  return (
-    <div className="container">
-    <h1>Good Vibes Quote Generator</h1>
-    <button onClick={this.setState.onQuote} className="btn btn-primary">
-    </button>
-    </div>
-
-  )
-}
+    render() {
+    return (
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
+            <h1>Inspirational Quote Generator</h1>
+            <p>{this.state.currentQuote}</p>
+            <button onClick={this.generateRandomQuote} className="btn btn-primary">
+                New Quote
+        </button>
+        </div>
+        );
+    }
+    }
 
 export default QuoteGenerator;
