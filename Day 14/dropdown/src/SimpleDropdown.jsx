@@ -4,8 +4,9 @@ const SimpleDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Toggle dropdown visibility
-  const toggleDropdown = () => {
+  // Toggle dropdown when button is clicked
+  const toggleDropdown = (event) => {
+    event.stopPropagation(); // Prevents this click from triggering document click
     setIsOpen((prev) => !prev);
   };
 
@@ -19,14 +20,12 @@ const SimpleDropdown = () => {
 
     if (isOpen) {
       document.addEventListener("click", handleClickOutside);
-    } else {
-      document.removeEventListener("click", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, [isOpen]); // Fix: Add `isOpen` dependency
+  }, [isOpen]); // Ensure it runs when isOpen changes
 
   return (
     <div style={{ position: "relative", display: "inline-block" }}>
