@@ -1,17 +1,41 @@
 import React, { useState} from 'react'
+import './EventRegistration.css'; 
 
 function EventRegistration() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
-    const [message, setMessage] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
+    const [ticketType, setTicketType] = useState('')
+    const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
+    const isValidPhoneNumber = (phoneNumber) => /^\d{10,}$/.test(phoneNumber); // At least 10 digits
+
 
     const handleSubmit = (event) => {
       event.preventDefault()
 
-      if (!name ||!email ||!phoneNumber ||!message) {
+      if (!name ||!email ||!phoneNumber) {
         setErrorMessage('Please fill out all fields.')
+        return
+      }
+
+      if (!name.length > 0)  {
+          setErrorMessage('Please enter a name.')
+          return
+        }
+
+      if (!isValidEmail(email)) {
+        setErrorMessage('Please enter a valid email address.')
+        return
+      }
+
+      if (!isValidPhoneNumber(phoneNumber)) {
+        setErrorMessage('Please enter a valid phone number.')
+        return
+      }
+
+      if (!ticketType) {
+        setErrorMessage('Please select a ticket type.')
         return
       }
 
@@ -20,7 +44,6 @@ function EventRegistration() {
         setName('')
         setEmail('')
         setPhoneNumber('')
-        setMessage('')
         setErrorMessage('')
         alert('Form submitted successfully!')
       }, 1000)
@@ -45,10 +68,16 @@ function EventRegistration() {
                 <input type='tel' id='phoneNumber' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
             </div>
             <div>
-                <label htmlFor='message'>Message:</label>
-                <textarea id='message' value={message} onChange={(e) => setMessage(e.target.value)} required />
+            <label htmlFor="ticketType">Ticket Type:</label>
+            <select id="ticketType" name="ticketType" value={ticketType} onChange={(e) => setTicketType(e.target.value)} required>
+            <option>Select a ticket type</option>
+            <option value="free">Free</option>
+            <option value="vip">VIP</option>
+            <option value="early-bird">Early Bird</option>
+            </select>
             </div>
         </form>
+        <button type='submit' id='submit' onClick={handleSubmit}>Submit</button>
     </div>
   )
 }
