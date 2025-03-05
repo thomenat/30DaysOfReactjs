@@ -9,7 +9,7 @@ function EventRegistration() {
     const [ticketType, setTicketType] = useState('')
 
     const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
-    const isValidPhoneNumber = (phoneNumber) => /^\d{10,}$/.test(phoneNumber); // At least 10 digits
+    const isValidPhoneNumber = (phoneNumber) => /^\d{9,}$/.test(phoneNumber); // At least 9 digits
 
 
     const handleSubmit = (event) => {
