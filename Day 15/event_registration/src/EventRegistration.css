@@ -1,0 +1,97 @@
+/* 🌿 General Page Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f3e7e9, #e3eeff); /* Soft gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* 🌸 Container */
+.container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* 🌿 Form Title */
+h1 {
+    color: #4A7C59; /* Earthy green */
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* 🌸 Form Fields */
+form div {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #4A7C59; /* Green focus */
+    box-shadow: 0px 0px 5px rgba(74, 124, 89, 0.3);
+}
+
+/* 🌸 Submit Button */
+button {
+    background: #4A7C59;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #3b5d45;
+}
+
+/* 🌿 Error Messages */
+.error {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin-top: -5px;
+}
+
+/* 🌸 Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

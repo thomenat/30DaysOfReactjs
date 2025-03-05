@@ -7,6 +7,7 @@ function EventRegistration() {
     const [phoneNumber, setPhoneNumber] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
     const [ticketType, setTicketType] = useState('')
+
     const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
     const isValidPhoneNumber = (phoneNumber) => /^\d{10,}$/.test(phoneNumber); // At least 10 digits
 
@@ -14,12 +15,12 @@ function EventRegistration() {
     const handleSubmit = (event) => {
       event.preventDefault()
 
-      if (!name ||!email ||!phoneNumber) {
+      if (!name ||!email ||!phoneNumber || !ticketType) {
         setErrorMessage('Please fill out all fields.')
         return
       }
 
-      if (!name.length > 0)  {
+      if (name.length == 0)  {
           setErrorMessage('Please enter a name.')
           return
         }
@@ -38,6 +39,8 @@ function EventRegistration() {
         setErrorMessage('Please select a ticket type.')
         return
       }
+
+      setErrorMessage('') // Clear any existing errors
 
       // Simulate form submission
       setTimeout(() => {
@@ -70,14 +73,15 @@ function EventRegistration() {
             <div>
             <label htmlFor="ticketType">Ticket Type:</label>
             <select id="ticketType" name="ticketType" value={ticketType} onChange={(e) => setTicketType(e.target.value)} required>
-            <option>Select a ticket type</option>
+            <option value="" disabled>Select a ticket type</option>
             <option value="free">Free</option>
             <option value="vip">VIP</option>
             <option value="early-bird">Early Bird</option>
             </select>
             </div>
+            {errorMessage && <p className="error">{errorMessage}</p>}
+            <button type='submit' id='submit'>Submit</button>
         </form>
-        <button type='submit' id='submit' onClick={handleSubmit}>Submit</button>
     </div>
   )
 }
