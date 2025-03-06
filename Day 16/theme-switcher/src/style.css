@@ -1,53 +1,66 @@
 
-body {
+html, body {
     margin: 0;
     padding: 0;
     font-family: "Arial", sans-serif;
+    height: 100%;
+    width: 100%;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  }
-  
-  /* Center content */
-  .App {
-    height: auto;
+}
+
+.App {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  
-  /* Heading styles */
-  h1 {
+    text-align: center;
+}
+
+/* Heading styles */
+h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     transition: color 0.3s ease-in-out;
-  }
-  
-  /* Button styling */
-  button {
-    padding: 12px 20px;
-    font-size: 16px;
+}
+
+/* Button styling */
+button {
+    padding: 12px 24px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     border: none;
     border-radius: 25px;
     transition: all 0.3s ease-in-out;
-  }
-  
-  /* Light mode button */
-  .light-mode button {
+}
+
+/* Light mode background */
+.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark mode background */
+.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Light mode button */
+.light-mode button {
     background-color: #000;
     color: #fff;
-  }
-  
-  /* Dark mode button */
-  .dark-mode button {
+}
+
+/* Dark mode button */
+.dark-mode button {
     background-color: #fff;
     color: #000;
-  }
-  
-  /* Hover effect */
-  button:hover {
+}
+
+/* Button Hover effect */
+button:hover {
     transform: scale(1.05);
     opacity: 0.8;
-  }
-  
+}

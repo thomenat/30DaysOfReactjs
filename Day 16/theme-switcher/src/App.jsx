@@ -19,7 +19,6 @@ const ThemedApp = () => {
       style={{
         backgroundColor: theme === "light" ? "#ffffff" : "#333333",
         color: theme === "light" ? "#000000" : "#ffffff",
-        height: "100vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
