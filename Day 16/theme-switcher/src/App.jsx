@@ -1,31 +1,36 @@
-import { useContext } from 'react'
-import { ThemeProvider, ThemeContext } from './ThemeContext'
-import ThemeToggle from './ThemeToggle'
-import './style.css'
+import React, { useContext } from "react";
+import { ThemeProvider, ThemeContext } from "./ThemeContext";
+import ThemeToggle from "./ThemeToggle";
 
 function App() {
-  const { theme } = useContext(ThemeContext);
-
   return (
     <ThemeProvider>
-      <div
-        className="App"
-        style={{
-          backgroundColor: theme === "light" ? "#ffffff" : "#333333",
-          color: theme === "light" ? "#000000" : "#ffffff",
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          transition: "background-color 0.3s ease-in-out",
-        }}
-      >
-        <h1>Theme Switcher App</h1>
-        <ThemeToggle />
-      </div>
+      <ThemedApp />
     </ThemeProvider>
   );
 }
 
-export default App
+const ThemedApp = () => {
+  const { theme } = useContext(ThemeContext); // Get theme from context
+
+  return (
+    <div
+      className={`App ${theme === "light" ? "light-mode" : "dark-mode"}`}
+      style={{
+        backgroundColor: theme === "light" ? "#ffffff" : "#333333",
+        color: theme === "light" ? "#000000" : "#ffffff",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        transition: "background-color 0.3s ease-in-out",
+      }}
+    >
+      <h1>Theme Switcher App</h1>
+      <ThemeToggle />
+    </div>
+  );
+};
+
+export default App;
