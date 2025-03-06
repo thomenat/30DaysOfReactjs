@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { ThemeProvider } from './ThemeContext'
 import ThemeToggle from './ThemeToggle'
+import '.style.css'
 
 function App() {
   const [count, setCount] = useState(0)
