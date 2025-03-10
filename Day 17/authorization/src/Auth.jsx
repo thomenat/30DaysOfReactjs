@@ -1,20 +1,28 @@
-import React, { useState, useEffect} from 'react'
+import React from 'react'
 
-const withAuthorization = (WrappedComponent) => {
+const withAuthorization = (WrappedComponent, message) => {
     return function ProtectedComponent(props) {
-        return props.isAuthenticated ? <WrappedComponent {...props}/> : <p>Not Authorizad</p>
-
+      if (!props.isAuthenticated) {
+        console.log(`Access Denied: ${message}`);
+        return <p>{message}</p>;
+      }
+  
+      return <WrappedComponent {...props} />;
     };
-};
+  };
+  
 
 const Dashboard = () => {
-    return <h1>Welcome to your dashboard</h1>;
+    return <h2>Welcome to your dashboard</h2>;
 }
 
-const ProtectedDashboard = withAuthorization(Dashboard);
-export default (WrappedComponent) => {
+const ProtectedDashboard = withAuthorization(Dashboard, "You must be logged in to view dashboard");
+
+export default function Auth() {
   return (
-    <div>
-    </div>
-  )
-}
+<div>
+      <h1>Higher-Order Component: Authorization</h1>
+      <ProtectedDashboard isAuthenticated={false} />
+    </div>  
+    );
+};
