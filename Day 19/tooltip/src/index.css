@@ -54,6 +54,19 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.tooltip {
+  position: absolute;
+  background: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  top: 30px; 
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
