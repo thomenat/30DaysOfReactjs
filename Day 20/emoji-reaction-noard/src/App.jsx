@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import RegularEmoji from "./RegularEmoji";
 import OptimizedEmoji from "./OptimizedEmoji";
+import './App.css';
 
 const emojis = ["👍", "❤️", "😂", "🔥", "🎉"];
 
