@@ -1,9 +1,25 @@
-container {
+ .book-card {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 16px;
-    margin: 16px;
-    max-width: 300px;
-    background-color: red;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1)
-}
+    background-color: #fffbe6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    transition: transform 0.2s ease;
+  }
+  
+  .book-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .book-title {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .book-detail {
+    margin: 4px 0;
+    color: #555;
+  }
+  

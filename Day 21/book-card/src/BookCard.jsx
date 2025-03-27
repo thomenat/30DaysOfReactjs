@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './BookCard.css';
 
 function BookCard({ title, author, pages, available }) {
   return (
-    <div className='container'>
-        <h2>BookCard</h2>
-        <p>Title: {title}</p>
-        <p>Author: { author} </p>
-        <p>Pages: {pages} </p>
-        <p>Status: {available ? "Available" : "Not available"} </p>
+    <div className='book-card'>
+        <p className='book-title'>Title: {title}</p>
+        <div className='book-detail'>
+        <p> <strong>Author: </strong>{ author} </p>
+        <p> <strong>Pages:</strong> {pages} </p>
+        <p><strong>Status:</strong> {available ? "Available" : "Not available"} </p>
+        </div>
     </div>
   )
 }

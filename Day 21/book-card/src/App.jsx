@@ -1,12 +1,23 @@
 import React from "react";
 import BookCard from "./BookCard";
+import "./App.css";
 
 function App() {
+  const books = [
+    { title: "Atomic Habits", author: "James Clear", pages: 320, available: true },
+    { title: "The Alchemist", author: "Paulo Coelho" },
+    { title: "Becoming", author: "Michelle Obama", pages: 448, available: false },
+    { title: "Clean Code", author: "Robert C. Martin", pages: 464, available: true }
+  ];
+
   return (
-    <div>
+    <div className="app">
       <h1>📚 My Book List</h1>
-      <BookCard title="Atomic Habits" author="James Clear" pages={320} available={true} />
-      <BookCard title="The Alchemist" author="Paulo Coelho" />
+      <div className="book-list">
+        {books.map((book, index) => (
+          <BookCard key={index} {...book} />
+        ))}
+      </div>
     </div>
   );
 }
