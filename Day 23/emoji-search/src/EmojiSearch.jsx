@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 function EmojiSearch() {
+    const [search, setSearch] = useState('')
     const EmojiArray = [
         {
             name: 'Smile',
@@ -24,13 +25,26 @@ function EmojiSearch() {
         }
     ]
 
+    const filteredEmojis = EmojiArray.filter((emoji) => emoji.name.toLowerCase().includes(search.toLowerCase()))
+
   return (
     <div className='container'>
         <h1>Emoji Search</h1>
-        <input type="text" placeholder='Search for an emoji' />
-        <div className="emoji-container">
-  
-        </div>
+        <input 
+        type="text" 
+        placeholder='Search for an emoji'  
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        />
+        <ul className="emoji-container">
+            {filteredEmojis.map((emoji) => (
+                <div key={emoji.name}>
+                    {emoji.symbol} {emoji.name}
+                
+                </div>
+
+            ))}
+        </ul>
     </div>
   )
 }
