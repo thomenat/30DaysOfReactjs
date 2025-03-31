@@ -11,7 +11,7 @@ test('renders title and input', () => {
 
 test('displays filtered emojis', () => {
     render(<EmojiSearch />);
-    const input = screen.getByPlaceholderText(/'Search for an emoji'/i);
+    const input = screen.getByPlaceholderText(/Search for an emoji/i);
     fireEvent.change(input, { target: { value: 'smile' } });
     expect(screen.getByText(/😊 smile/i)).toBeInTheDocument();
     expect(screen.queryByText(/😂 laugh/i)).not.toBeInTheDocument();
