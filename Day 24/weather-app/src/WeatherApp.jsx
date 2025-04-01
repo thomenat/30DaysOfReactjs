@@ -1,36 +1,72 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import './App.css';
 
 function WeatherApp() {
+    const [cityInput, setCityInput] = useState('');
     const [city, setCity] = useState('');
-    const [temperature, setTemperature] = useState(0);
-    const [condition, setCondition] = useState('');
-
-    const handleSearch = () => {
-        console.log('Searching for weather in', city);
-    }
-
+    const [temperature, setTemperature] = useState(null);
+    const [condition, setCondition] = useState(null);
+    const [error, setError] = useState(null);
     const apiKey = '638d74ad921e437e92c144412250104';
     const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
 
-    const fetchWeather = async () => {
-        const response = await axios.get(apiUrl);
-        console.log(response.data);
-    }
+
+    useEffect(() => {
+        if (city === '') return;
+      
+        const fetchWeather = async () => {
+            try {
+                setError(null);
+                const response = await axios.get(apiUrl);
+                setTemperature(response.data.current.temp_c);
+                setCondition(response.data.current.condition.text);
+            } catch (error) {
+                setTemperature(null);
+                setCondition(null);
+                setError('City not found. Please try again');
+            }
+        };
+
+        fetchWeather();
+    }, [city]);
+
+    const handleSearch = () => {
+        if (cityInput.trim() === '') return;
+    
+        const normalizedCity = cityInput.trim().toLowerCase();
+        const capitalizedCity = normalizedCity.charAt(0).toUpperCase() + normalizedCity.slice(1);
+        setCity(capitalizedCity);
+    };
+
+
   return (
     <div className='weather-app'>
         <h1>Weather App</h1>
         <div className='search'>
-            <input type="text" placeholder='Search for a city' value={city} onChange={(e) => setCity(e.target.value)} />
+            <input 
+            type="text" 
+            placeholder='Search for a city' 
+            value={cityInput} 
+            onChange={(e) => setCityInput(e.target.value)} 
+            onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                    handleSearch();
+                }
+            }} />
             <button onClick={handleSearch}>Search</button>
         </div>
-        <div className='weather-info'>
-            <h2>Weather in {city}</h2>
-            <p>Temperature: {temperature}°C</p>
-            <p>Condition: {condition}</p>
-        </div>
-    </div>
-  )
-}
+        {error && <div className='error'>{error}</div>}
 
-export default WeatherApp
+        {temperature && (
+            <div className='weather-info'>
+                <p>Weather in <strong>{city}</strong></p>
+                <p>🌡️Temperature: {temperature}°C</p>
+                <p>🌤️Condition: {condition}</p>
+            </div>
+        )}
+    </div>
+    )
+};
+
+export default WeatherApp;
