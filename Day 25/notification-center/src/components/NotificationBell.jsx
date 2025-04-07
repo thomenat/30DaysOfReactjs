@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import NotificationList from './NotificationList';
+import './NotificationCenter.css';
 
 const NotificationBell = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -7,8 +9,8 @@ const NotificationBell = () => {
     const unreadCount = notifications.filter(n => !n.read).length;
   
     return (
-      <div style={{ position: 'relative' }}>
-        <button onClick={() => setIsOpen(!isOpen)}>
+      <div className="notification-bell-wrapper">
+        <button className="notification-bell-button" onClick={() => setIsOpen(!isOpen)}>
           🔔
           {unreadCount > 0 && (
             <span style={{
@@ -27,17 +29,8 @@ const NotificationBell = () => {
         </button>
   
         {isOpen && (
-          <div style={{
-            position: 'absolute',
-            top: '2.5rem',
-            right: 0,
-            width: '250px',
-            backgroundColor: '#fff',
-            boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-            zIndex: 10
-          }}>
-            {/* You'll render <NotificationList /> here later */}
-            <p>Notifications dropdown will go here</p>
+          <div className="notification-dropdown">
+            <NotificationList />
           </div>
         )}
       </div>
