@@ -1,24 +1,12 @@
+import './Toast.css';
 import ToastPortal from './ToastPortal';
 
-const toastStyles = {
-  position: 'fixed',
-  bottom: '20px',
-  right: '20px',
-  backgroundColor: '#333',
-  color: '#fff',
-  padding: '1rem 1.5rem',
-  borderRadius: '5px',
-  boxShadow: '0 2px 10px rgba(0,0,0,0.3)',
-  zIndex: 9999,
-};
-
-const Toast = ({ message }) => {
+const Toast = ({ id, message, type = 'info', onClose }) => {
   return (
-    <ToastPortal>
-      <div style={toastStyles}>
-        {message}
-      </div>
-    </ToastPortal>
+    <div className={`toast ${type}`}>
+      <span>{message}</span>
+      <button className="close-btn" onClick={() => onClose(id)}>✖</button>
+    </div>
   );
 };
 

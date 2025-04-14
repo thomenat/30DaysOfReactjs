@@ -1,24 +1,33 @@
 import { useState } from 'react';
-import Toast from './components/Toast';
+import { v4 as uuidv4 } from 'uuid';
+import ToastContainer from './components/ToastContainer';
 
 function App() {
-  const [showToast, setShowToast] = useState(false);
+  const [toasts, setToasts] = useState([]);
 
-  const handleShowToast = () => {
-    setShowToast(true);
+  const showToast = (message, type = 'info') => {
+    const id = uuidv4();
+    const newToast = { id, message, type };
+    setToasts(prev => [...prev, newToast]);
+
     setTimeout(() => {
-      setShowToast(false);
+      removeToast(id);
     }, 3000);
+  };
+
+  const removeToast = (id) => {
+    setToasts(prev => prev.filter(t => t.id !== id));
   };
 
   return (
     <div style={{ padding: '2rem' }}>
-      <h1>Toast Notification using React Portal</h1>
-      <button onClick={handleShowToast}>
-        Show Notification
-      </button>
+      <h1>Stylish Notification System</h1>
+      <button onClick={() => showToast("✅ Success! Data saved.", "success")}>Show Success</button>
+      <button onClick={() => showToast("⚠️ Warning: Low storage!", "warning")}>Show Warning</button>
+      <button onClick={() => showToast("❌ Error while loading", "error")}>Show Error</button>
+      <button onClick={() => showToast("ℹ️ Heads up: this is info", "info")}>Show Info</button>
 
-      {showToast && <Toast message="✅ Message sent successfully!" />}
+      <ToastContainer toasts={toasts} onClose={removeToast} />
     </div>
   );
 }
