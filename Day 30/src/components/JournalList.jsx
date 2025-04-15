@@ -12,7 +12,8 @@ const JournalList = () => {
   useEffect(() => {
     const fetchEntries = async () => {
       try {
-        const response = await axios.get('/src/data/journalEntries.json');
+        const response = await axios.get('/journalEntries.json');
+
         setEntries(response.data.entries);
       } catch (error) {
         console.error('Error fetching journal entries:', error);
