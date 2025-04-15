@@ -1,0 +1,39 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "day": 1,
+      "topic": "Introduction to React",
+      "summary": "Learned about React's component-based architecture and the virtual DOM.",
+      "githubLink": "https://github.com/yourusername/30-days-of-react/tree/main/day-1"
+    },
+    {
+      "id": 2,
+      "day": 2,
+      "topic": "JSX",
+      "summary": "Explored JSX syntax and how it makes writing React components more intuitive.",
+      "githubLink": "https://github.com/yourusername/30-days-of-react/tree/main/day-2"
+    },
+    {
+      "id": 3,
+      "day": 3,
+      "topic": "Components & Props",
+      "summary": "Understood how to create reusable components and pass data through props.",
+      "githubLink": "https://github.com/yourusername/30-days-of-react/tree/main/day-3"
+    },
+    {
+      "id": 4,
+      "day": 4,
+      "topic": "useState",
+      "summary": "Mastered state management using the useState hook.",
+      "githubLink": "https://github.com/yourusername/30-days-of-react/tree/main/day-4"
+    },
+    {
+      "id": 5,
+      "day": 5,
+      "topic": "useEffect",
+      "summary": "Learned about side effects and lifecycle management with useEffect.",
+      "githubLink": "https://github.com/yourusername/30-days-of-react/tree/main/day-5"
+    }
+  ]
+} 
