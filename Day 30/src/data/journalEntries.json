@@ -1,40 +1,214 @@
-
 {
   "entries": [
     {
       "id": 1,
       "day": 1,
       "topic": "Introduction to React",
-      "summary": "Learned about React's component-based architecture and the virtual DOM.",
-      "githubLink": "https://github.com/yourusername/30-days-of-react/tree/main/day-1"
+      "summary": "Started the React journey by learning about React's component-based architecture, JSX syntax, and the virtual DOM. Set up the first React project and created basic components.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2001"
     },
     {
       "id": 2,
       "day": 2,
-      "topic": "JSX",
-      "summary": "Explored JSX syntax and how it makes writing React components more intuitive.",
-      "githubLink": "https://github.com/yourusername/30-days-of-react/tree/main/day-2"
+      "topic": "JSX Fundamentals",
+      "summary": "Dived deeper into JSX, learning about expressions, conditional rendering, and component composition. Practiced creating reusable UI elements.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2002"
     },
     {
       "id": 3,
       "day": 3,
       "topic": "Components & Props",
-      "summary": "Understood how to create reusable components and pass data through props.",
-      "githubLink": "https://github.com/yourusername/30-days-of-react/tree/main/day-3"
+      "summary": "Mastered component creation and prop passing. Learned about functional and class components, and how to create reusable UI elements.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2003"
     },
     {
       "id": 4,
       "day": 4,
-      "topic": "useState",
-      "summary": "Mastered state management using the useState hook.",
-      "githubLink": "https://github.com/yourusername/30-days-of-react/tree/main/day-4"
+      "topic": "Todo List App",
+      "summary": "Built a todo list application to practice state management and component interaction. Implemented add, delete, and complete functionality.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2004/todolist-app"
     },
     {
       "id": 5,
       "day": 5,
-      "topic": "useEffect",
-      "summary": "Learned about side effects and lifecycle management with useEffect.",
-      "githubLink": "https://github.com/yourusername/30-days-of-react/tree/main/day-5"
+      "topic": "useState Hook",
+      "summary": "Explored the useState hook for managing component state. Learned about state updates and the importance of immutable state.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2005"
+    },
+    {
+      "id": 6,
+      "day": 6,
+      "topic": "useEffect Hook",
+      "summary": "Mastered the useEffect hook for handling side effects, data fetching, and component lifecycle events.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2006"
+    },
+    {
+      "id": 7,
+      "day": 7,
+      "topic": "Movies List App",
+      "summary": "Created a movie list application to practice API integration and data fetching. Implemented search and filter functionality.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2007/movies-list-app"
+    },
+    {
+      "id": 8,
+      "day": 8,
+      "topic": "React Router",
+      "summary": "Learned about client-side routing with React Router. Implemented navigation between different views and dynamic routes.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2008"
+    },
+    {
+      "id": 9,
+      "day": 9,
+      "topic": "Counter App",
+      "summary": "Built a counter application to practice state management and event handling. Implemented increment, decrement, and reset functionality.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2009/counter"
+    },
+    {
+      "id": 10,
+      "day": 10,
+      "topic": "Timer App",
+      "summary": "Created a timer application using useEffect and useState. Implemented start, pause, and reset functionality.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2010/timer"
+    },
+    {
+      "id": 11,
+      "day": 11,
+      "topic": "User List",
+      "summary": "Built a user list application with data fetching and filtering capabilities. Practiced working with external APIs.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2011/user-list"
+    },
+    {
+      "id": 12,
+      "day": 12,
+      "topic": "Custom Hooks",
+      "summary": "Learned to create and use custom hooks for reusable logic. Implemented hooks for form handling and data fetching.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2012"
+    },
+    {
+      "id": 13,
+      "day": 13,
+      "topic": "Quote Generator",
+      "summary": "Created a quote generator application that fetches random quotes from an API. Implemented share functionality.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2013/quote-generator"
+    },
+    {
+      "id": 14,
+      "day": 14,
+      "topic": "Context API",
+      "summary": "Explored React's Context API for state management. Learned about providers and consumers.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2014"
+    },
+    {
+      "id": 15,
+      "day": 15,
+      "topic": "Event Registration",
+      "summary": "Built an event registration form with validation and state management. Practiced form handling in React.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2015/event_registration"
+    },
+    {
+      "id": 16,
+      "day": 16,
+      "topic": "Theme Switcher",
+      "summary": "Created a theme switcher application using Context API. Implemented dark/light mode functionality.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2016/theme-switcher"
+    },
+    {
+      "id": 17,
+      "day": 17,
+      "topic": "Authorization",
+      "summary": "Implemented basic authentication and authorization in a React application. Learned about protected routes.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2017/authorization"
+    },
+    {
+      "id": 18,
+      "day": 18,
+      "topic": "Error Boundary",
+      "summary": "Created error boundaries to handle runtime errors gracefully. Implemented fallback UI for error states.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2018/error-boundary-demo"
+    },
+    {
+      "id": 19,
+      "day": 19,
+      "topic": "Tooltip Component",
+      "summary": "Built a reusable tooltip component with positioning and animation. Practiced component composition.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2019/tooltip"
+    },
+    {
+      "id": 20,
+      "day": 20,
+      "topic": "Emoji Reaction Board",
+      "summary": "Created an emoji reaction board with real-time updates. Implemented drag-and-drop functionality.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2020/emoji-reaction-noard"
+    },
+    {
+      "id": 21,
+      "day": 21,
+      "topic": "Performance Optimization",
+      "summary": "Learned about React performance optimization techniques including memo, useMemo, and useCallback.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2021"
+    },
+    {
+      "id": 22,
+      "day": 22,
+      "topic": "Testing in React",
+      "summary": "Explored testing in React using Jest and React Testing Library. Practiced writing unit and component tests.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2022"
+    },
+    {
+      "id": 23,
+      "day": 23,
+      "topic": "Emoji Search",
+      "summary": "Built an emoji search application with filtering and search functionality. Practiced working with large datasets.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2023/emoji-search"
+    },
+    {
+      "id": 24,
+      "day": 24,
+      "topic": "Weather App",
+      "summary": "Created a weather application that fetches real-time weather data. Implemented location-based weather updates.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2024/weather-app"
+    },
+    {
+      "id": 25,
+      "day": 25,
+      "topic": "Notification Center",
+      "summary": "Built a notification center with real-time updates. Implemented different notification types and animations.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2025/notification-center"
+    },
+    {
+      "id": 26,
+      "day": 26,
+      "topic": "Advanced User List",
+      "summary": "Created an advanced user list with sorting, filtering, and pagination. Implemented complex data manipulation.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2026/user-list"
+    },
+    {
+      "id": 27,
+      "day": 27,
+      "topic": "Image Magnifier",
+      "summary": "Built an image magnifier component with zoom functionality. Practiced working with mouse events and DOM manipulation.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2027/image-magnifier"
+    },
+    {
+      "id": 28,
+      "day": 28,
+      "topic": "Status Tracker",
+      "summary": "Created a status tracking application with real-time updates. Implemented progress indicators and status management.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2028/status-tracker"
+    },
+    {
+      "id": 29,
+      "day": 29,
+      "topic": "Toast Portal",
+      "summary": "Built a toast notification system using React Portals. Implemented different notification types and animations.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2029/day29-toast-portal"
+    },
+    {
+      "id": 30,
+      "day": 30,
+      "topic": "Final Project",
+      "summary": "Created a comprehensive React journal application that showcases all 30 days of learning. Implemented routing, state management, and responsive design.",
+      "githubLink": "https://github.com/thomenat/30DaysOfReactjs/tree/main/Day%2030"
     }
   ]
 } 

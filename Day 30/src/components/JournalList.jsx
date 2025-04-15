@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../styles/JournalList.css';
 
 const JournalList = () => {
   const [entries, setEntries] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
+  const [expandedId, setExpandedId] = useState(null);
 
   useEffect(() => {
     const fetchEntries = async () => {
@@ -27,51 +29,79 @@ const JournalList = () => {
     entry.summary.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const toggleExpand = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
+      <div className="loading-spinner">
+        <div className="spinner"></div>
       </div>
     );
   }
 
   return (
-    <>
-      <input
-        type="text"
-        placeholder="Search by topic or summary..."
-        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-8"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+    <div className="journal-container">
+      <div className="journal-content">
+        <h1 className="journal-title">My React Journey</h1>
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search by topic or summary..."
+            className="search-input"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <svg className="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredEntries.map((entry) => (
-          <Link
-            key={entry.id}
-            to={`/entry/${entry.id}`}
-            className="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6"
-          >
-            <h2 className="text-xl font-semibold text-gray-800 mb-2">
-              Day {entry.day}: {entry.topic}
-            </h2>
-            <p className="text-gray-600 mb-4 line-clamp-3">{entry.summary}</p>
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-500">View Details</span>
-              <a
-                href={entry.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-700 text-sm"
-                onClick={(e) => e.stopPropagation()}
+        <div className="entries-list">
+          {filteredEntries.map((entry) => (
+            <div
+              key={entry.id}
+              className={`entry-card ${expandedId === entry.id ? 'expanded' : ''}`}
+            >
+              <div
+                className="entry-content"
+                onClick={() => toggleExpand(entry.id)}
               >
-                GitHub
-              </a>
+                <div className="entry-header">
+                  <div className="entry-title-container">
+                    <span className="entry-day-badge">
+                      {entry.day}
+                    </span>
+                    <h2 className="entry-title">
+                      {entry.topic}
+                    </h2>
+                  </div>
+                  <div className="entry-actions">
+                   
+                    <a
+                      href={entry.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-github"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+                
+                {expandedId === entry.id && (
+                  <div className="entry-summary">
+                    <p>{entry.summary}</p>
+                  </div>
+                )}
+              </div>
             </div>
-          </Link>
-        ))}
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
